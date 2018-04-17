@@ -33,7 +33,14 @@ def get_all_products():
 			product_names.update([name])
 			print(product_names)
 			#[<h2 aria-hidden="true" class="pie-productname">\n<span>SOLVINDEN</span> </h2>]
+	return product_names
 
 
+names = get_all_products()
+print("writing to file")
+file = open("ikea-names.txt", "w")
+for name in names:
+	file.write(name + "\n")
+file.close()
+print("done!")
 
-get_all_products()
